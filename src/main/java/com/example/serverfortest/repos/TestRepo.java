@@ -12,6 +12,7 @@ import java.util.Optional;
 public interface TestRepo extends PagingAndSortingRepository<Test, Long> {
     Iterable<Test> findById(int i);
     List<Test> findByDateLike(String date);
+    List<Test> findByTypeLike(String type);
     void deleteByDate(String date);
     List<Test> findTopByOrderByIdDesc();
 
