@@ -37,14 +37,14 @@ public class ServerController {
     }
 
     @DeleteMapping("/delete/by_date/{date}")
-    public void deleteByDate(@PathVariable("date") String date) {
+    public ResponseEntity<Void> deleteByDate(@PathVariable("date") String date) {
         testRepo.deleteByDate(date);
+        return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/delete/by_id/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable("id") Long id) {
         testRepo.deleteById(id);
-
         return ResponseEntity.noContent().build();
     }
 
@@ -54,6 +54,7 @@ public class ServerController {
         testRepo.save(test);
         return testRepo.findAll();
     }
+
     @GetMapping("/last")
     public @ResponseBody Iterable<Test> lats() {
         return testRepo.findTopByOrderByIdDesc();
