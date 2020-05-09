@@ -30,20 +30,18 @@ public class ServerController {
         return testRepo.findByDateLike(date);
     }
 
-    @DeleteMapping("/delete/all")
+    @GetMapping("/delete/all")
     public void deleteAll(){
         testRepo.deleteAll();
     }
 
-    @DeleteMapping("/delete/by_date")
-    public void deleteByDate(
-            @RequestParam(value = "date", required = true) String date) {
+    @DeleteMapping("/delete/{date}")
+    public void deleteByDate(@PathVariable String date) {
         testRepo.deleteByDate(date);
     }
 
-    @DeleteMapping("/delete/id")
-    public void deleteById(
-            @RequestParam(value = "id", required = true) Long id) {
+    @DeleteMapping("/delete/{id}")
+    public void deleteById(@PathVariable Long id) {
         testRepo.deleteById(id);
     }
 
