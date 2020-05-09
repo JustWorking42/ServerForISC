@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.Temporal;
+import javax.transaction.Transactional;
 import java.util.Map;
 
 @Controller
@@ -36,6 +38,7 @@ public class ServerController {
         testRepo.deleteAll();
     }
 
+    @Transactional
     @DeleteMapping("/delete/by_date/{date}")
     public ResponseEntity<Void> deleteByDate(@PathVariable("date") String date) {
         testRepo.deleteByDate(date);
