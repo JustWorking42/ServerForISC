@@ -35,12 +35,12 @@ public class ServerController {
         testRepo.deleteAll();
     }
 
-    @DeleteMapping("/delete/{date}")
+    @DeleteMapping("/delete/by_date/{date}")
     public void deleteByDate(@PathVariable String date) {
         testRepo.deleteByDate(date);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete/by_id/{id}")
     public void deleteById(@PathVariable Long id) {
         testRepo.deleteById(id);
     }
