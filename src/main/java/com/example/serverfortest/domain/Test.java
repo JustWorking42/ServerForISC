@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Test {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private long id;
 
 
     @Column(columnDefinition = "TEXT")
@@ -23,11 +23,11 @@ public class Test {
         this.results = results;
     }
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 
