@@ -17,6 +17,7 @@ public class Test {
 
     public Test(){
     }
+
     public Test(String type, String date, String results) {
         this.type = type;
         this.date = date;
